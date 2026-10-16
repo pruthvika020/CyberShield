@@ -1,34 +1,60 @@
-# CyberShield — Java DSA Project
+# CyberShield — Java Security Analytics Platform
 
-A console-based educational security analytics simulator using Java and CSV datasets.
+CyberShield is a Java-based security analytics simulator designed to analyze security events, identify suspicious patterns, and explore network security using Data Structures and Algorithms.
 
-## Modules
-- CO1: KMP signature search
-- CO2: Suffix Array + Kasai LCP repeated-substring analysis
-- CO3: Levenshtein edit distance
-- CO4: Edmonds-Karp maximum flow
-- CO5: Vertex Cover 2-approximation
-- CO6: Reservoir sampling
-- Shared: CSV data loader and SecurityEvent model
+## Features
 
-## Eclipse setup
-1. Extract the ZIP.
-2. In Eclipse choose **File → Import → Existing Projects into Workspace** if the project was imported as a project. If Eclipse doesn't recognize it, create a Java Project named `CyberShield_Java_Project`, then copy `src` and `dataset` into the project root.
-3. Ensure `src` is marked as the source folder.
-4. Run `src/cybershield/main/Main.java`.
-5. Keep the `dataset` directory directly under the project root because the program reads relative paths like `dataset/security_logs.csv`.
+- **Signature Search:** Find security patterns in event data using the Knuth–Morris–Pratt (KMP) algorithm.
+- **Repeated Pattern Analysis:** Analyze repeated substrings using Suffix Arrays and the Kasai LCP algorithm.
+- **Fuzzy Signature Matching:** Compare text patterns using Levenshtein Edit Distance.
+- **Network Flow Analysis:** Calculate maximum flow in a network using the Edmonds–Karp algorithm.
+- **Conflict Analysis:** Apply a Vertex Cover approximation algorithm to identify related nodes in a conflict graph.
+- **Random Sampling:** Select representative security events using Reservoir Sampling.
+- **CSV Data Processing:** Load and analyze security events from CSV datasets.
 
-## Dataset files
-- `dataset/security_logs.csv`: used by CO1, CO2, CO3 inputs (CO3 compares user-provided signatures), CO6.
-- `dataset/network.csv`: directed graph capacities for CO4.
-- `dataset/security_conflicts.csv`: conflict graph edges for CO5.
+## Technologies Used
 
-All included records are fictional demonstration data, not real security incidents.
+- Java 8+
+- Data Structures and Algorithms
+- CSV File Handling
+- Eclipse IDE
 
-## Notes
-- Java 8+ compatible; no external dependencies.
-- CO1 currently uses KMP for single-pattern matching. The signature list is exposed for extension to full Aho-Corasick multi-pattern matching if required by the course rubric.
-- CO2 analyzes the combined event-type/signature/severity text from the loaded CSV rows.
-- CO4 expects a directed graph; enter nodes that appear in `network.csv`.
-- CO5 is an approximation algorithm and does not guarantee the minimum vertex cover.
-- CO6 samples randomly; results may differ between runs.
+## Project Structure
+
+```text
+CyberShield/
+├── dataset/
+│   ├── security_logs.csv
+│   ├── network.csv
+│   └── security_conflicts.csv
+├── src/
+│   └── cybershield/
+└── README.md
+```
+
+## Getting Started
+
+1. Install Java JDK 8 or later and Eclipse IDE.
+2. Clone or download this repository.
+3. Import the project into Eclipse as an existing Java project, or create a Java project and copy the `src` and `dataset` folders into its root.
+4. Ensure `src` is configured as a source folder.
+5. Run `src/cybershield/main/Main.java`.
+6. Keep the `dataset` folder in the project root so the application can locate its CSV files.
+
+## Dataset
+
+The project includes demonstration datasets for security logs, network capacities, and conflict relationships. All records are fictional and intended for educational and testing purposes.
+
+## Future Improvements
+
+- Extend signature matching to support multiple patterns.
+- Add improved security event filtering and reporting.
+- Introduce a graphical dashboard for visualizing analysis results.
+
+## Disclaimer
+
+CyberShield is an educational security analytics simulator. It is not a production-grade security monitoring system.
+
+## Author
+
+Pruthvika Pappula
