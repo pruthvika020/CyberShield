@@ -1,0 +1,6 @@
+rule_a,rule_b
+R1,R2
+R1,R3
+R2,R4
+R3,R4
+R4,R5
